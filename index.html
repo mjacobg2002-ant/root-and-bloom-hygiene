@@ -250,6 +250,7 @@ body.menu-open{overflow:hidden}
 .founder{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow-soft);padding:clamp(1.8rem,3vw,2.4rem);display:flex;flex-direction:column}
 .founder__top{display:flex;align-items:center;gap:1.1rem;margin-bottom:1.3rem}
 .monogram{width:66px;height:66px;flex:0 0 auto;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.45rem;font-weight:700;color:#fff;background:var(--brand-gradient);box-shadow:var(--shadow-soft);letter-spacing:.02em}
+.founder__photo{width:74px;height:74px;flex:0 0 auto;border-radius:50%;object-fit:cover;object-position:center 20%;box-shadow:var(--shadow-soft);border:2px solid #fff}
 .founder__name{font-family:var(--serif);font-size:1.55rem;font-weight:600;color:var(--navy-900);line-height:1.1}
 .founder__cred{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin-top:.35rem}
 .founder p{color:rgba(30,33,32,.84);font-size:.98rem}
@@ -538,7 +539,7 @@ body.menu-open{overflow:hidden}
            <img class="founder__photo" src="assets/img/katelynn.jpg" alt="Katelynn Smith, RDH"> and add matching CSS. -->
       <article class="founder reveal">
         <div class="founder__top">
-          <div class="monogram" aria-hidden="true">KS</div>
+          <img class="founder__photo" src="assets/img/katelynn.jpg" alt="Katelynn Smith, RDH" onerror="this.outerHTML='&lt;div class=&quot;monogram&quot; aria-hidden=&quot;true&quot;&gt;KS&lt;/div&gt;'" />
           <div>
             <div class="founder__name">Katelynn Smith</div>
             <div class="founder__cred">Registered Dental Hygienist · Co-Founder</div>
@@ -549,7 +550,7 @@ body.menu-open{overflow:hidden}
       </article>
       <article class="founder reveal">
         <div class="founder__top">
-          <div class="monogram" aria-hidden="true">LG</div>
+          <img class="founder__photo" src="assets/img/lauren.jpg" alt="Lauren Green, RDH" onerror="this.outerHTML='&lt;div class=&quot;monogram&quot; aria-hidden=&quot;true&quot;&gt;LG&lt;/div&gt;'" />
           <div>
             <div class="founder__name">Lauren Green</div>
             <div class="founder__cred">Registered Dental Hygienist · Co-Founder</div>
