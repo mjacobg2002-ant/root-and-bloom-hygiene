@@ -358,7 +358,11 @@ body.menu-open{overflow:hidden}
   .firstvisit__cta{flex-direction:column;text-align:center}
 }
 @media (max-width:520px){
-  .svc-grid,.gal-grid,.testi-grid,.steps,.exp-grid,.stats__grid{grid-template-columns:1fr}
+  .svc-grid,.gal-grid,.testi-grid,.steps,.exp-grid{grid-template-columns:1fr}
+  /* keep the stats band compact on phones: 2x2, tighter, smaller */
+  .stats__grid{grid-template-columns:1fr 1fr;padding:1rem var(--gutter);gap:.4rem 1rem}
+  .stat .v{font-size:1.7rem}
+  .stat .l{margin-top:.2rem;font-size:.72rem}
   .footer__nav{grid-template-columns:1fr 1fr}
   .btn{width:100%}
   .hero__actions .btn,.appt__actions .btn{width:100%}
