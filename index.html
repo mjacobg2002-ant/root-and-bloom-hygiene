@@ -200,7 +200,7 @@ body.menu-open{overflow:hidden}
 /* ===== STATS BAND ===== */
 .stats{position:relative;overflow:hidden;background:var(--brand-gradient)}
 .stats::before{content:"";position:absolute;inset:0;opacity:.4;background:radial-gradient(80% 120% at 0% 0%,rgba(255,255,255,.14),transparent 55%)}
-.stats__grid{position:relative;max-width:var(--wrap);margin:0 auto;padding:3rem var(--gutter);display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.stats__grid{position:relative;max-width:var(--wrap);margin:0 auto;padding:1.7rem var(--gutter);display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
 .stat{text-align:center;color:#fff}
 .stat .v{font-family:var(--serif);font-size:clamp(2rem,4vw,2.9rem);font-weight:700;line-height:1}
 .stat .v span{color:var(--champagne)}
@@ -329,7 +329,8 @@ body.menu-open{overflow:hidden}
 .footer__bar{border-top:1px solid rgba(255,255,255,.12);max-width:var(--wrap);margin:0 auto;padding:1.3rem var(--gutter);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:.78rem;color:rgba(255,255,255,.45)}
 
 /* mobile action bar */
-.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:55;background:#fff;border-top:1px solid var(--line);box-shadow:0 -8px 30px -12px rgba(31,46,37,.25);padding:.55rem;gap:.55rem;grid-template-columns:1fr 1.4fr}
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:55;background:#fff;border-top:1px solid var(--line);box-shadow:0 -8px 30px -12px rgba(31,46,37,.25);padding:.55rem;gap:.55rem;grid-template-columns:1fr 1.4fr;transform:translateY(130%);transition:transform .4s var(--ease)}
+.mobile-bar.is-visible{transform:none}
 .mobile-bar .btn{padding:.85rem;font-size:.85rem}
 
 /* reveal */
@@ -684,7 +685,8 @@ body.menu-open{overflow:hidden}
 (function(){
   "use strict";
   var topbar=document.getElementById('topbar'), toggle=document.getElementById('navToggle'), menu=document.getElementById('mobileMenu');
-  function onScroll(){ topbar.classList.toggle('is-scrolled', window.scrollY>60); }
+  var mbar=document.querySelector('.mobile-bar');
+  function onScroll(){ topbar.classList.toggle('is-scrolled', window.scrollY>60); if(mbar){ mbar.classList.toggle('is-visible', window.scrollY > window.innerHeight*0.7); } }
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
   function close(){ menu.classList.remove('is-open'); menu.setAttribute('aria-hidden','true'); toggle.setAttribute('aria-expanded','false'); document.body.classList.remove('menu-open'); }
   toggle.addEventListener('click', function(){ var o=menu.classList.toggle('is-open'); menu.setAttribute('aria-hidden',o?'false':'true'); toggle.setAttribute('aria-expanded',o?'true':'false'); document.body.classList.toggle('menu-open',o); });
